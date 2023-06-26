@@ -11020,7 +11020,11 @@ html {
 .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
   font-size: 1.5rem;
 }
-
+.portfolio .portfolio-item img {
+  transition: all 0.2s ease-in-out;
+  max-height: 200px;
+  max-width: 80%;
+}
 .portfolio-modal .btn-close {
   color: #1abc9c;
   font-size: 2rem;
@@ -11029,6 +11033,7 @@ html {
 .portfolio-modal .portfolio-modal-title {
   font-size: 2.25rem;
   line-height: 2rem;
+  text-decoration: none;
 }
 @media (min-width: 992px) {
   .portfolio-modal .portfolio-modal-title {
@@ -11041,6 +11046,34 @@ html {
   text-align: left;
 
 }
+
+.portfolioModal1 h2.a, .portfolioModal2 h2.a, .portfolioModal3 h2.a{
+  text-decoration: none;
+  color: #2c3e50;
+  position:relative;
+  display:inline-block;
+  
+}
+
+.portfolioModel1 a:hover::after, .portfolioModal2 a:hover::after, .portfolioModal3 a:hover::after{
+  width:100%;
+}
+
+.portfolioModal1 a :after, .portfolioModal2 a :after, .portfolioModal3 a :after{
+    content: '';
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 0;
+    height: 6px;
+    background-color: #099999;
+    -webkit-transition: width 0.25s;
+    transition: width 0.25s;
+
+}
+
 
 .footer {
   padding-top: 5rem;
