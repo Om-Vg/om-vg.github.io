@@ -1,182 +1,969 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Portfolio of Om Venugopal, Cybersecurity Engineer." />
-    <meta name="author" content="Om Venugopal" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';" />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains">
-    <title>Om Venugopal - Cybersecurity Engineer</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Venugopal — Security Engineer</title>
+<meta name="description" content="Senior Security Engineer specialising in Application Security and DevSecOps. IBM. Black Hat USA 2023 Scholar. Open to roles in UAE, Singapore & globally.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0a0a0a;
+    --surface:   #111111;
+    --surface2:  #181818;
+    --border:    #222222;
+    --accent:    #e8ff47;
+    --accent2:   #ff4747;
+    --text:      #f0ede6;
+    --muted:     #666660;
+    --mid:       #999990;
+    --display:   'Bebas Neue', sans-serif;
+    --body:      'DM Sans', sans-serif;
+    --mono:      'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* ── CUSTOM CURSOR ─────────────────────────────────── */
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.12s ease-out, width 0.2s, height 0.2s, opacity 0.2s;
+    opacity: 0.5;
+  }
+
+  /* ── NAV ───────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.92);
+    border-color: var(--border);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; gap: 36px; list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--mid);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ──────────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(232,255,71,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,255,71,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-noise {
+    position: absolute; inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.2s forwards;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(80px, 13vw, 180px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    opacity: 0;
+    animation: fadeUp 0.7s 0.4s forwards;
+  }
+
+  h1 .accent-word { color: var(--accent); }
+
+  .hero-sub {
+    margin-top: 32px;
+    display: flex; align-items: flex-start; gap: 48px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.7s forwards;
+  }
+
+  .hero-desc {
+    max-width: 480px;
+    font-size: 16px;
+    color: var(--mid);
+    line-height: 1.8;
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+  }
+
+  .hero-stats {
+    display: flex; gap: 40px;
+  }
+
+  .stat {
+    display: flex; flex-direction: column;
+  }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 48px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .hero-cta {
+    margin-top: 48px;
+    display: flex; gap: 16px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.9s forwards;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid;
+    transition: all 0.25s;
+    cursor: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .scroll-hint {
+    position: absolute; bottom: 32px; right: 48px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+    opacity: 0;
+    animation: fadeIn 1s 1.5s forwards;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .scroll-hint::before {
+    content: '';
+    display: block;
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--muted));
+  }
+
+  /* ── BADGE ─────────────────────────────────────────── */
+  .blackhat-badge {
+    position: absolute; top: 120px; right: 48px;
+    border: 1px solid var(--accent2);
+    padding: 16px 20px;
+    max-width: 220px;
+    opacity: 0;
+    animation: fadeIn 0.8s 1.2s forwards;
+  }
+  .blackhat-badge::before {
+    content: '★';
+    display: block;
+    font-size: 20px;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  .blackhat-badge strong {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .blackhat-badge span {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+
+  /* ── SECTIONS ──────────────────────────────────────── */
+  section {
+    padding: 100px 48px;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 0.95;
+    color: var(--text);
+    margin-bottom: 64px;
+  }
+
+  /* ── EXPERIENCE ────────────────────────────────────── */
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0 48px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    transition: background 0.2s;
+  }
+  .exp-item::before {
+    content: '';
+    position: absolute; left: -48px; top: 0; bottom: 0;
+    width: 2px;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .exp-item:hover::before { background: var(--accent); }
+
+  .exp-meta { padding-top: 4px; }
+  .exp-period {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .exp-co {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .exp-loc {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .exp-content h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .exp-bullets li {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+    padding-left: 16px;
+    position: relative;
+  }
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-size: 12px;
+  }
+
+  .exp-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 20px;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── SKILLS ────────────────────────────────────────── */
+  #skills { background: var(--surface); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-cell {
+    background: var(--surface);
+    padding: 32px;
+    transition: background 0.2s;
+  }
+  .skill-cell:hover { background: var(--surface2); }
+
+  .skill-cell-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .skill-items {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .skill-item {
+    font-size: 13px;
+    color: var(--mid);
+    font-weight: 400;
+  }
+  .skill-item::after { content: ' ·'; color: var(--border); }
+  .skill-item:last-child::after { content: ''; }
+
+  /* ── CERTS ─────────────────────────────────────────── */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .cert-card {
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    display: flex; gap: 20px; align-items: flex-start;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .cert-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .cert-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .cert-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .cert-issuer {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .cert-card.featured {
+    grid-column: 1 / -1;
+    border-color: var(--accent2);
+    background: rgba(255,71,71,0.04);
+  }
+  .cert-card.featured .cert-name { color: var(--accent2); font-size: 17px; }
+
+  /* ── CONTACT ───────────────────────────────────────── */
+  #contact { background: var(--surface); }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-text h2 { margin-bottom: 20px; }
+  .contact-text p {
+    font-size: 16px;
+    color: var(--mid);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .contact-links {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .contact-link {
+    display: flex; align-items: center; gap: 16px;
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  .contact-link:hover { color: var(--accent); }
+  .contact-link-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  .availability {
+    border: 1px solid var(--accent);
+    padding: 32px;
+    margin-top: 0;
+  }
+  .avail-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+  }
+  .avail-status {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .avail-title {
+    font-family: var(--display);
+    font-size: 32px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .avail-desc {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .avail-locations {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .avail-loc {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+  }
+
+  /* ── FOOTER ────────────────────────────────────────── */
+  footer {
+    padding: 32px 48px;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  footer span {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATIONS ────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(232,255,71,0.4); }
+    50%       { opacity: 0.8; box-shadow: 0 0 0 6px rgba(232,255,71,0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    #hero, section, footer { padding-left: 24px; padding-right: 24px; }
+    .hero-sub { flex-direction: column; gap: 32px; }
+    .hero-stats { gap: 24px; }
+    .exp-item { grid-template-columns: 1fr; gap: 12px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .certs-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    .blackhat-badge { display: none; }
+    .nav-links { display: none; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+</style>
 </head>
-    
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2VENJDQ3E"></script>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Nav -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">OV_SEC</a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certs">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-noise"></div>
+
+  <div class="blackhat-badge">
+    <strong>Black Hat USA 2023</strong>
+    <span>Student Scholar — awarded to exceptional cybersecurity talent globally</span>
+  </div>
+
+  <div class="hero-tag">Security Engineer · AppSec · DevSecOps</div>
+
+  <h1>OM<br><span class="accent-word">VENU</span><br>GOPAL</h1>
+
+  <div class="hero-sub">
+    <p class="hero-desc">
+      3+ years at IBM securing enterprise web applications, APIs, and multi-cloud infrastructure at scale. I don't just find vulnerabilities — I eliminate the classes that keep coming back.
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Critical vulns<br>remediated</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">40%</span>
+        <span class="stat-label">Defect rate<br>reduction</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Apps in<br>DevSecOps pipeline</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-cta">
+    <a href="#contact" class="btn btn-primary">Get in touch</a>
+    <a href="https://github.com/omvenugopal" target="_blank" class="btn btn-ghost">GitHub →</a>
+    <a href="https://linkedin.com/in/omvenugopal" target="_blank" class="btn btn-ghost">LinkedIn →</a>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <div class="section-label reveal">// 01 — Experience</div>
+  <h2 class="reveal">Where I've<br>Done the Work</h2>
+
+  <div class="exp-list">
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Dec 2023 — Present</div>
+        <div class="exp-co">IBM India</div>
+        <div class="exp-loc">Bengaluru, India</div>
+      </div>
+      <div class="exp-content">
+        <h3>Security Engineer — Application Security</h3>
+        <ul class="exp-bullets">
+          <li>Eliminated 3 recurring vulnerability classes — CORS misconfigurations, CSP bypasses, broken OAuth/JWT/SAML — across 50+ critical findings, reducing release-stage defect rates by ~40%.</li>
+          <li>Owned full lifecycle of a DevSecOps programme from business case to production: architecture review, threat modelling, compliance mapping — live across 8 apps on AWS, Azure & on-prem.</li>
+          <li>Deployed SAST / DAST / SCA / WAF / secret-detection across 6+ GitHub CI/CD pipelines — cut false positives by ~35% and extended coverage into 4 new vulnerability categories in 6 months.</li>
+          <li>Led Security Champion programme that trained 50+ engineers, reducing repeat vulnerability patterns by ~30%.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">AppSec</span><span class="tag">DevSecOps</span><span class="tag">AWS</span>
+          <span class="tag">Azure</span><span class="tag">OAuth</span><span class="tag">JWT</span>
+          <span class="tag">CORS</span><span class="tag">Threat Modelling</span><span class="tag">WAF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Jun — Aug 2022</div>
+        <div class="exp-co">New York Public Library</div>
+        <div class="exp-loc">New York, USA</div>
+      </div>
+      <div class="exp-content">
+        <h3>Cybersecurity Intern</h3>
+        <ul class="exp-bullets">
+          <li>Hardened 140+ endpoints via XDR/EDR — remediated 20+ dormant vulnerabilities, saving ~40 hrs/week of manual monitoring effort and cutting alert noise by ~25%.</li>
+          <li>Built security awareness programme adopted by 300+ staff; phishing simulations achieved 60% click-through reduction across three successive campaigns.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">XDR/EDR</span><span class="tag">Endpoint Security</span><span class="tag">Security Awareness</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Aug 2022 — May 2023</div>
+        <div class="exp-co">University of Maryland</div>
+        <div class="exp-loc">College Park, USA</div>
+      </div>
+      <div class="exp-content">
+        <h3>Graduate Teaching Assistant — Network Security</h3>
+        <ul class="exp-bullets">
+          <li>Designed and delivered 12 security labs for 140+ M.Eng students covering cryptography, web security, OAuth/SAML, and OWASP Top 10 — rated 4.7/5.0 by students.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">Cryptography</span><span class="tag">Web Security</span><span class="tag">OWASP</span><span class="tag">OAuth</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="section-label reveal">// 02 — Skills</div>
+  <h2 class="reveal">The Full<br>Stack</h2>
+
+  <div class="skills-grid reveal">
+    <div class="skill-cell">
+      <div class="skill-cell-label">Offensive Security</div>
+      <div class="skill-items">
+        <span class="skill-item">Penetration Testing</span>
+        <span class="skill-item">Web & API Security</span>
+        <span class="skill-item">OWASP Top 10</span>
+        <span class="skill-item">Burp Suite</span>
+        <span class="skill-item">OWASP ZAP</span>
+        <span class="skill-item">IT/OT Security</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-cell-label">AppSec & SDLC</div>
+      <div class="skill-items">
+        <span class="skill-item">SAST</span>
+        <span class="skill-item">DAST</span>
+        <span class="skill-item">SCA</span>
+        <span class="skill-item">WAF</span>
+        <span class="skill-item">Secret Detection</span>
+        <span class="skill-item">Checkmarx</span>
+        <span class="skill-item">SonarQube</span>
+        <span class="skill-item">Threat Modelling</span>
+        <span class="skill-item">Code Review</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-cell-label">Web Security</div>
+      <div class="skill-items">
+        <span class="skill-item">CORS</span>
+        <span class="skill-item">CSP</span>
+        <span class="skill-item">SOP</span>
+        <span class="skill-item">OAuth 2.0</span>
+        <span class="skill-item">SAML</span>
+        <span class="skill-item">JWT</span>
+        <span class="skill-item">WebSockets</span>
+        <span class="skill-item">Same-Site Cookies</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-cell-label">Cloud & Infrastructure</div>
+      <div class="skill-items">
+        <span class="skill-item">AWS</span>
+        <span class="skill-item">Azure</span>
+        <span class="skill-item">GCP</span>
+        <span class="skill-item">Docker</span>
+        <span class="skill-item">Kubernetes</span>
+        <span class="skill-item">IaC Security</span>
+        <span class="skill-item">GitHub CI/CD</span>
+        <span class="skill-item">Container Security</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-cell-label">Programming</div>
+      <div class="skill-items">
+        <span class="skill-item">Python</span>
+        <span class="skill-item">JavaScript</span>
+        <span class="skill-item">Bash</span>
+        <span class="skill-item">Java</span>
+        <span class="skill-item">C</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-cell-label">Compliance</div>
+      <div class="skill-items">
+        <span class="skill-item">ISO 27001</span>
+        <span class="skill-item">NIST CSF</span>
+        <span class="skill-item">PCI DSS</span>
+        <span class="skill-item">GDPR</span>
+        <span class="skill-item">HIPAA</span>
+        <span class="skill-item">Risk Assessment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education & Certs -->
+<section id="certs">
+  <div class="section-label reveal">// 03 — Education & Certifications</div>
+  <h2 class="reveal">Credentials</h2>
+
+  <div class="certs-grid">
+
+    <div class="cert-card featured reveal">
+      <div class="cert-icon">★</div>
+      <div>
+        <div class="cert-name">Black Hat USA Student Scholarship 2023</div>
+        <div class="cert-issuer">Black Hat · Awarded to exceptional cybersecurity students globally — one of the most competitive student honours in the field</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon">🎓</div>
+      <div>
+        <div class="cert-name">M.Eng — Cybersecurity</div>
+        <div class="cert-issuer">University of Maryland, College Park · USA · 2021–2023</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon">🎓</div>
+      <div>
+        <div class="cert-name">B.Sc — Computer Science</div>
+        <div class="cert-issuer">PSG College of Arts & Science · India</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon">🏅</div>
+      <div>
+        <div class="cert-name">CompTIA Security+</div>
+        <div class="cert-issuer">CompTIA · Active</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon">🏅</div>
+      <div>
+        <div class="cert-name">Certified in Cybersecurity (CC)</div>
+        <div class="cert-issuer">ISC² · Active</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon">🏅</div>
+      <div>
+        <div class="cert-name">Junior Penetration Tester</div>
+        <div class="cert-issuer">TryHackMe · Active</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon">🏅</div>
+      <div>
+        <div class="cert-name">Azure Fundamentals AZ-900</div>
+        <div class="cert-issuer">Microsoft · Active</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-text">
+      <div class="section-label reveal">// 04 — Contact</div>
+      <h2 class="reveal">Let's<br>Talk</h2>
+      <p class="reveal">Open to Senior Security Engineer, AppSec, and Product Security roles at top-tier technology, financial services, and cybersecurity firms.</p>
+
+      <div class="contact-links reveal">
+        <a href="mailto:omlsvenugopal@gmail.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          omlsvenugopal@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/omvenugopal" target="_blank" class="contact-link">
+          <span class="contact-link-label">LinkedIn</span>
+          linkedin.com/in/omvenugopal
+        </a>
+        <a href="https://github.com/omvenugopal" target="_blank" class="contact-link">
+          <span class="contact-link-label">GitHub</span>
+          github.com/omvenugopal
+        </a>
+      </div>
+    </div>
+
+    <div class="availability reveal">
+      <div class="avail-status">
+        <span class="avail-dot"></span>Available for opportunities
+      </div>
+      <div class="avail-title">Open to<br>Relocate</div>
+      <p class="avail-desc">Actively targeting senior roles in the UAE, Singapore, and globally. Open to full-time positions and select consulting engagements in AppSec and DevSecOps.</p>
+      <div class="avail-locations">
+        <span class="avail-loc">Dubai, UAE</span>
+        <span class="avail-loc">Abu Dhabi</span>
+        <span class="avail-loc">Singapore</span>
+        <span class="avail-loc">London</span>
+        <span class="avail-loc">Remote / Global</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <span>Om Venugopal · Security Engineer · omvenugopal.github.io</span>
+  <span>Built to be found.</span>
+</footer>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
 
-  gtag('config', 'G-F2VENJDQ3E');
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width = '20px';
+      cursor.style.height = '20px';
+      ring.style.width = '56px';
+      ring.style.height = '56px';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width = '10px';
+      cursor.style.height = '10px';
+      ring.style.width = '36px';
+      ring.style.height = '36px';
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll state
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
 </script>
-
-<body id="page-top">
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top">Om Venugopal</a>
-            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="masthead bg-primary text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <img class="masthead-avatar mb-5" src="assets/img/profile-img.jpg" alt="Om Venugopal" />
-            <h1 class="masthead-heading text-uppercase mb-0">Om Venugopal</h1>
-            <p class="masthead-subheading font-weight-light mb-0">Cybersecurity Engineer | Penetration Testing |</p>
-        </div>
-    </header>
-
-    <section id="about" class="page-section mb-0">
-        <div class="container">
-            <h2 class="text-center text-uppercase">About</h2>
-            <p class="lead">I am a cybersecurity professional with a Master's in Cybersecurity from the University of Maryland. I specialize in application security, network security, penetration testing, and digital forensics, with hands-on experience in tools like Nessus, Splunk, and Metasploit. My passion lies in securing digital ecosystems and continuous learning to stay ahead of emerging threats.</p>
-        </div>
-    </section>
-
-    <section id="skills" class="page-section bg-light">
-        <div class="container">
-            <h2 class="text-center text-uppercase">Skills</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Technical Skills</h4>
-                    <ul>
-                        <li>Network Security, Penetration Testing</li>
-                        <li>Threat Modelling, Digital Forensics, Incident Response</li>
-                        <li>Vulnerability Management, Compliance</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Tools & Technologies</h4>
-                    <ul>                        
-                        <li>Programming Languages: Python, BASH, Shell Scripting, SQL, C, JavaScript</li>
-                        <li>Tools: Nmap, Wireshark, Nessus, CrowdStrike Falcon, Splunk, Orca Security, IBM Qradar</li>
-                        <li>Exploitation Framework: Burp Suite, ZAP, Metasploit, MITRE ATT&CK</li>
-                        <li>Technologies: AWS, Docker, Kubernetes, Azure, GCP, WAD</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Certifications</h4>
-                    <ul>
-                        <li>CompTIA Security+</li>
-                        <li>Jr. Penetration Tester (TryHackMe)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="page-section">
-        <div class="container">
-            <h2 class="text-center text-uppercase">Experience</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <h4> Security Consultant</h4>
-                    <p>IBM Dec 2023 - present</p>
-                    <ul>
-                        <li>Conducted comprehensive penetration testing of web applications and APIs within strict project timelines, utilizing
-frameworks like OWASP Top 10 and aligning findings with CVSS 4.0 for risk prioritization.</li>
-                        <li>Performed API security assessments to identify vulnerabilities, such as broken object-level authorization, ensuring
-robust API security and minimizing potential attack vectors.</li>
-                        <li>Executed automated and manual security assessments using tools like Burp Suite and Nessus, delivering detailed
-reports on high-impact vulnerabilities to stakeholders</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <h4>Network Security Analyst</h4>
-                    <p>The New York Public Library (2022)</p>
-                    <ul>
-                        <li>Spearheaded phishing awareness campaigns and implemented security measures to achieve PCI-DSS compliance.</li>
-<li> Leveraged EDR, and SIEM tools to identify and mitigate dormant vulnerabilities, saving 40 man-hours weekly.</li>
-<li>Uncovered and investigated a Bitcoin mining crime, preventing resource misuse and fortifying network security</li>
-                        </ul>
-                </div>
-                <div class="col-lg-6">
-                    <h4>Quality Management Specialist</h4>
-                    <p>PwC, Bangalore (2021)</p>
-                    <ul>
-                        <li>Executed security assessments for large-scale enterprise applications.</li>
-                        <li>Created cybersecurity test strategies and incident response protocols.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="page-section bg-light">
-        <div class="container">
-            <h2 class="text-center text-uppercase">Projects</h2>
-            <ul>
-                <a href: "https://github.io/portfolio">Under Construction</a>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact" class="page-section">
-        <div class="container">
-            <h2 class="text-center text-uppercase">Contact</h2>
-            <form id="contactForm" onsubmit="return sanitizeInput();">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer text-center">
-        <div class="container">
-            <p>Copyright &copy; Om Venugopal 2025</p>
-        </div>
-    </footer>
-
-    <script>
-        function sanitizeInput() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            if (/[^a-zA-Z0-9@. ]/.test(name + email + message)) {
-                alert('Invalid input detected!');
-                return false;
-            }
-            return true;
-        }
-    </script>
 </body>
 </html>
