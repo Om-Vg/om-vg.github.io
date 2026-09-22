@@ -3,53 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Venugopal — Security Engineer</title>
-<meta name="description" content="Security Engineer specialising in Application Security and DevSecOps. IBM. Black Hat USA 2023 Scholar. Open to roles in UAE, Singapore & globally.">
+<title>Om Venugopal — Application Security Consultant</title>
+<meta name="description" content="Application Security Consultant at IBM. AppSec, cloud security, DevSecOps, and client-facing security consulting.">
 <link rel="canonical" href="https://om-vg.github.io/">
 
 <!-- Content-Security-Policy. GitHub Pages can't set response headers, so this
      meta tag is the available option. The two inline <script> blocks below
      (JSON-LD schema, gtag config) are allow-listed by exact SHA-256 hash
      rather than 'unsafe-inline' — if either is edited, the hash must be
-     regenerated or the script will silently stop running. All other JS/CSS
-     is external (css/style.css, js/app.js). -->
+     regenerated or the script will silently stop running. All other CSS is
+     external (css/style.css). -->
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
-  script-src 'self' https://www.googletagmanager.com 'sha256-7b0s8+XOqwxq0urGCo1XBnzBePcATWlorGYHVEc0AG0=' 'sha256-60ix1sXgn2VzC7b9RIc4t7UsOZSpnWoXjwyA2F9Spqs=';
-  style-src 'self' https://fonts.googleapis.com;
-  font-src https://fonts.gstatic.com;
-  img-src 'self' https://avatars.githubusercontent.com data:;
-  connect-src 'self' https://api.github.com;
+  script-src 'self' https://www.googletagmanager.com 'sha256-p/lyebMTUTcrmGk7lENmHY5BDD+XZGzPaTdit6k7J1Q=' 'sha256-60ix1sXgn2VzC7b9RIc4t7UsOZSpnWoXjwyA2F9Spqs=';
+  style-src 'self';
+  font-src 'self';
+  img-src 'self' data:;
+  connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com;
   base-uri 'self';
   object-src 'none';
 ">
 
-<!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="favicon.ico" sizes="any">
 
 <!-- Open Graph / Twitter (needed for link previews on LinkedIn etc.) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://om-vg.github.io/">
-<meta property="og:title" content="Om Venugopal — Security Engineer">
-<meta property="og:description" content="Security Engineer specialising in Application Security and DevSecOps. IBM. Black Hat USA 2023 Scholar. Open to roles in UAE, Singapore & globally.">
-<meta property="og:image" content="https://om-vg.github.io/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Om Venugopal — Security Engineer">
-<meta name="twitter:description" content="Security Engineer specialising in Application Security and DevSecOps. IBM. Black Hat USA 2023 Scholar.">
-<meta name="twitter:image" content="https://om-vg.github.io/assets/og-image.png">
+<meta property="og:title" content="Om Venugopal — Application Security Consultant">
+<meta property="og:description" content="Application Security Consultant at IBM. AppSec, cloud security, DevSecOps, and client-facing security consulting.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Om Venugopal — Application Security Consultant">
+<meta name="twitter:description" content="Application Security Consultant at IBM. AppSec, cloud security, DevSecOps, and client-facing security consulting.">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Om Venugopal",
-  "jobTitle": "Security Engineer",
+  "jobTitle": "Application Security Consultant",
   "url": "https://om-vg.github.io/",
-  "image": "https://om-vg.github.io/assets/og-image.png",
   "worksFor": {
     "@type": "Organization",
     "name": "IBM"
@@ -70,444 +63,160 @@
   ]
 }
 </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<header class="site">
+  <nav class="site">
+    <a class="brand" href="#home">Om Venugopal</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#consulting">Consulting</a>
+      <a href="#presales">Presales</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="cta" href="mailto:omlsvenugopal@gmail.com">Get in touch</a>
+  </nav>
+</header>
 
-<nav id="navbar">
-  <a href="#hero" class="nav-logo">OV_SEC</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#certs">Certs</a></li>
-    <li><a href="#publisher">Published</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<main>
 
-<!-- Hero -->
-<section id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-noise"></div>
-  <div class="blackhat-badge">
-    <strong>Black Hat USA 2023</strong>
-    <span>Student Scholar — awarded to exceptional cybersecurity talent globally</span>
-  </div>
-  <div class="hero-tag">Security Engineer · AppSec · DevSecOps</div>
-  <h1>OM<br><span class="accent-word">VENU</span><br>GOPAL</h1>
-  <div class="hero-sub">
-    <p class="hero-desc">
-      <span id="ibmTenure">2+ years</span> at IBM securing enterprise web applications, APIs, and multi-cloud infrastructure at scale. I don't just find vulnerabilities — I eliminate the classes that keep coming back.
-    </p>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">50+</span>
-        <span class="stat-label">Critical vulns<br>remediated</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">40%</span>
-        <span class="stat-label">Defect rate<br>reduction</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">8</span>
-        <span class="stat-label">Apps in<br>DevSecOps pipeline</span>
-      </div>
+  <section id="home" class="wrap">
+    <p class="eyebrow">Application Security Consultant — IBM</p>
+    <h1>I fix the vulnerability class, not just the ticket.</h1>
+    <p class="lede">Application security consulting for teams and leaders who need both the technical fix and the risk conversation that goes with it. I work the detail with engineering teams and the risk posture with the people who own the budget for it.</p>
+    <a class="cta" href="mailto:omlsvenugopal@gmail.com">Let's talk about your AppSec programme</a>
+    <div class="stats">
+      <div class="stat"><span class="num">50+</span><span class="label">Critical findings resolved across 3 recurring vulnerability classes</span></div>
+      <div class="stat"><span class="num">8</span><span class="label">Applications under a DevSecOps programme I own</span></div>
+      <div class="stat"><span class="num">20+</span><span class="label">Security workstreams led for a global manufacturing client</span></div>
+      <div class="stat"><span class="num">50+</span><span class="label">Engineers trained through a Security Champion programme</span></div>
     </div>
-  </div>
-  <div class="hero-cta">
-    <a href="#contact" class="btn btn-primary">Get in touch</a>
-    <a href="https://github.com/Om-Vg" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub →</a>
-    <a href="https://www.linkedin.com/in/om-lakshmi-shanthi" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn →</a>
-  </div>
-  <div class="scroll-hint">Scroll</div>
-</section>
+  </section>
 
-<!-- Experience -->
-<section id="experience">
-  <div class="section-label reveal">// 01 — Experience</div>
-  <h2 class="reveal">Where I've<br>Done the Work</h2>
-  <div class="exp-list">
-    <div class="exp-item reveal">
-      <div class="exp-meta">
-        <div class="exp-period">Dec 2023 — Present</div>
-        <div class="exp-co">IBM India</div>
-        <div class="exp-loc">Bengaluru, India</div>
-      </div>
-      <div class="exp-content">
-        <h3>Security Engineer — Application Security</h3>
-        <ul class="exp-bullets">
-          <li>Eliminated 3 recurring vulnerability classes — CORS misconfigurations, CSP bypasses, broken OAuth/JWT/SAML — across 50+ critical findings, reducing release-stage defect rates by ~40%.</li>
-          <li>Owned full lifecycle of a DevSecOps programme from business case to production: architecture review, threat modelling, compliance mapping — live across 8 apps on AWS, Azure & on-prem.</li>
-          <li>Deployed SAST / DAST / SCA / WAF / secret-detection across 6+ GitHub CI/CD pipelines — cut false positives by ~35% and extended coverage into 4 new vulnerability categories in 6 months.</li>
-          <li>Led Security Champion programme that trained 50+ engineers, reducing repeat vulnerability patterns by ~30%.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag">AppSec</span><span class="tag">DevSecOps</span><span class="tag">AWS</span>
-          <span class="tag">Azure</span><span class="tag">OAuth</span><span class="tag">JWT</span>
-          <span class="tag">CORS</span><span class="tag">Threat Modelling</span><span class="tag">WAF</span>
-        </div>
-      </div>
-    </div>
-    <div class="exp-item reveal">
-      <div class="exp-meta">
-        <div class="exp-period">Aug 2022 — May 2023</div>
-        <div class="exp-co">University of Maryland</div>
-        <div class="exp-loc">College Park, USA</div>
-      </div>
-      <div class="exp-content">
-        <h3>Graduate Teaching Assistant — Network Security</h3>
-        <ul class="exp-bullets">
-          <li>Designed and delivered 12 security labs for 140+ M.Eng students covering cryptography, web security, OAuth/SAML, and OWASP Top 10 — rated 4.7/5.0 by students.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag">Cryptography</span><span class="tag">Web Security</span><span class="tag">OWASP</span><span class="tag">OAuth</span>
-        </div>
-      </div>
-    </div>
-    <div class="exp-item reveal">
-      <div class="exp-meta">
-        <div class="exp-period">Jun — Aug 2022</div>
-        <div class="exp-co">New York Public Library</div>
-        <div class="exp-loc">New York, USA</div>
-      </div>
-      <div class="exp-content">
-        <h3>Cybersecurity Intern</h3>
-        <ul class="exp-bullets">
-          <li>Hardened 140+ endpoints via XDR/EDR — remediated 20+ dormant vulnerabilities, saving ~40 hrs/week of manual monitoring effort and cutting alert noise by ~25%.</li>
-          <li>Built security awareness programme adopted by 300+ staff; phishing simulations achieved 60% click-through reduction across three successive campaigns.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag">XDR/EDR</span><span class="tag">Endpoint Security</span><span class="tag">Security Awareness</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section id="about" class="wrap prose">
+    <h2>About</h2>
+    <p>I work at the intersection of application security and the people who have to act on it — engineers fixing the vulnerability, and the stakeholders deciding what risk they're willing to carry.</p>
+    <p>At IBM, I own the DevSecOps security programme for a global manufacturing client: 8 applications across AWS, Azure, and on-premises infrastructure, instrumented with SAST, DAST, SCA, WAF, and secret detection across 6+ CI/CD pipelines. I lead delivery across 20+ security workstreams for that engagement and coordinate stakeholders across the Philippines and Indonesia — which means most of my week is spent translating the same finding three different ways: as a fix for the engineer who owns the code, as a risk statement for the client who owns the budget, and as a status update for the people in between.</p>
+    <p>The technical grounding behind that is direct, not theoretical. I've eliminated three recurring vulnerability classes — CORS misconfiguration, CSP gaps, and OAuth/JWT/SAML implementation errors — across 50+ findings, which means I've spent enough time inside these flows to know where they actually break, not just where a scanner flags them. That depth is also why I built and run a Security Champion programme that has trained 50+ engineers: you don't change how people write code with a compliance mandate, you change it by showing them the exploit.</p>
+    <p>Before IBM, I taught network security at the University of Maryland (M.Eng, Cybersecurity), designing and running 12 labs — cryptography, web security, OAuth/SAML — for 140+ students, rated 4.7/5.0. Teaching adversarial, technical material to people who don't yet have the vocabulary for it is the same discipline that consulting and presales work demands: know the material cold, then pitch it at the altitude the room actually needs.</p>
+    <p>I was awarded a Black Hat USA 2023 Student Scholarship, and hold Security+, ISC2 CC, and Azure Fundamentals (AZ-900), with an AWS certification in progress.</p>
+  </section>
 
-<!-- Skills -->
-<section id="skills">
-  <div class="section-label reveal">// 02 — Skills</div>
-  <h2 class="reveal">The Full<br>Stack</h2>
-  <div class="skills-grid reveal">
-    <div class="skill-cell">
-      <div class="skill-cell-label">Offensive Security</div>
-      <div class="skill-items">
-        <span class="skill-item">Penetration Testing</span>
-        <span class="skill-item">Web & API Security</span>
-        <span class="skill-item">OWASP Top 10</span>
-        <span class="skill-item">Burp Suite</span>
-        <span class="skill-item">OWASP ZAP</span>
-        <span class="skill-item">IT/OT Security</span>
+  <section id="expertise" class="wrap">
+    <h2>Expertise</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Application Security &amp; Secure SDLC</h3>
+        <p>CORS, CSP, SOP, OAuth 2.0, SAML, JWT, WebSocket security, same-site cookie policy, secure code review.</p>
+      </div>
+      <div class="card">
+        <h3>DevSecOps &amp; Security Automation</h3>
+        <p>SAST, DAST, SCA, WAF, and secret-detection tooling (Checkmarx, SonarQube) deployed and owned across 6+ CI/CD pipelines and 8 production applications spanning AWS, Azure, and on-premises infrastructure.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud &amp; Infrastructure Security</h3>
+        <p>AWS, Azure, GCP; container security (Docker, Kubernetes); infrastructure security posture across multi-cloud and hybrid environments.</p>
+      </div>
+      <div class="card">
+        <h3>API &amp; Modern Application Security</h3>
+        <p>Hands-on remediation experience in the failure modes that actually recur in production APIs and SPAs: CORS misconfiguration, CSP policy gaps, OAuth/OIDC/SAML implementation errors, JWT handling.</p>
+      </div>
+      <div class="card">
+        <h3>Vulnerability Management &amp; Compliance</h3>
+        <p>Risk assessment and control mapping against ISO 27001, NIST CSF, PCI DSS, GDPR, and HIPAA.</p>
+      </div>
+      <div class="card">
+        <h3>Security Enablement &amp; Technical Training</h3>
+        <p>Design and delivery of a Security Champion programme (50+ engineers) and a graduate-level security curriculum (12 labs, 140+ students) — the same discipline applied to internal engineering teams and to a university classroom.</p>
       </div>
     </div>
-    <div class="skill-cell">
-      <div class="skill-cell-label">AppSec & SDLC</div>
-      <div class="skill-items">
-        <span class="skill-item">SAST</span>
-        <span class="skill-item">DAST</span>
-        <span class="skill-item">SCA</span>
-        <span class="skill-item">WAF</span>
-        <span class="skill-item">Secret Detection</span>
-        <span class="skill-item">Checkmarx</span>
-        <span class="skill-item">SonarQube</span>
-        <span class="skill-item">Threat Modelling</span>
-        <span class="skill-item">Code Review</span>
-      </div>
-    </div>
-    <div class="skill-cell">
-      <div class="skill-cell-label">Web Security</div>
-      <div class="skill-items">
-        <span class="skill-item">CORS</span>
-        <span class="skill-item">CSP</span>
-        <span class="skill-item">SOP</span>
-        <span class="skill-item">OAuth 2.0</span>
-        <span class="skill-item">SAML</span>
-        <span class="skill-item">JWT</span>
-        <span class="skill-item">WebSockets</span>
-        <span class="skill-item">Same-Site Cookies</span>
-      </div>
-    </div>
-    <div class="skill-cell">
-      <div class="skill-cell-label">Cloud & Infrastructure</div>
-      <div class="skill-items">
-        <span class="skill-item">AWS</span>
-        <span class="skill-item">Azure</span>
-        <span class="skill-item">GCP</span>
-        <span class="skill-item">Docker</span>
-        <span class="skill-item">Kubernetes</span>
-        <span class="skill-item">IaC Security</span>
-        <span class="skill-item">GitHub CI/CD</span>
-        <span class="skill-item">Container Security</span>
-      </div>
-    </div>
-    <div class="skill-cell">
-      <div class="skill-cell-label">Programming</div>
-      <div class="skill-items">
-        <span class="skill-item">Python</span>
-        <span class="skill-item">JavaScript</span>
-        <span class="skill-item">Bash</span>
-        <span class="skill-item">Java</span>
-        <span class="skill-item">C</span>
-      </div>
-    </div>
-    <div class="skill-cell">
-      <div class="skill-cell-label">Compliance</div>
-      <div class="skill-items">
-        <span class="skill-item">ISO 27001</span>
-        <span class="skill-item">NIST CSF</span>
-        <span class="skill-item">PCI DSS</span>
-        <span class="skill-item">GDPR</span>
-        <span class="skill-item">HIPAA</span>
-        <span class="skill-item">Risk Assessment</span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Education & Certs -->
-<section id="certs">
-  <div class="section-label reveal">// 03 — Education & Certifications</div>
-  <h2 class="reveal">Credentials</h2>
-  <div class="certs-grid">
-    <div class="cert-card featured reveal">
-      <div class="cert-icon" aria-hidden="true">★</div>
-      <div>
-        <div class="cert-name">Black Hat USA Student Scholarship 2023</div>
-        <div class="cert-issuer">Black Hat · Awarded to exceptional cybersecurity students globally — one of the most competitive student honours in the field</div>
-      </div>
-    </div>
-    <div class="cert-card reveal">
-      <div class="cert-icon" aria-hidden="true">🎓</div>
-      <div>
-        <div class="cert-name">M.Eng — Cybersecurity</div>
-        <div class="cert-issuer">University of Maryland, College Park · USA · 2021–2023</div>
-      </div>
-    </div>
-    <div class="cert-card reveal">
-      <div class="cert-icon" aria-hidden="true">🎓</div>
-      <div>
-        <div class="cert-name">B.Sc — Computer Science</div>
-        <div class="cert-issuer">PSG College of Arts & Science · India</div>
-      </div>
-    </div>
-    <div class="cert-card reveal">
-      <div class="cert-icon" aria-hidden="true">🏅</div>
-      <div>
-        <div class="cert-name">CompTIA Security+</div>
-        <div class="cert-issuer">CompTIA · Active</div>
-      </div>
-    </div>
-    <div class="cert-card reveal">
-      <div class="cert-icon" aria-hidden="true">🏅</div>
-      <div>
-        <div class="cert-name">Certified in Cybersecurity (CC)</div>
-        <div class="cert-issuer">ISC² · Active</div>
-      </div>
-    </div>
-    <div class="cert-card reveal">
-      <div class="cert-icon" aria-hidden="true">🏅</div>
-      <div>
-        <div class="cert-name">Junior Penetration Tester</div>
-        <div class="cert-issuer">TryHackMe · Active</div>
-      </div>
-    </div>
-    <div class="cert-card reveal">
-      <div class="cert-icon" aria-hidden="true">🏅</div>
-      <div>
-        <div class="cert-name">Azure Fundamentals AZ-900</div>
-        <div class="cert-issuer">Microsoft · Active</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section id="consulting" class="wrap prose">
+    <h2>Consulting &amp; Client Engagement</h2>
+    <p>At IBM, I lead delivery across 20+ security workstreams for a global manufacturing client — coordinating stakeholders across the Philippines and Indonesia alongside the core team in India. That work is less about finding vulnerabilities than about keeping a multi-geography programme moving: prioritising what gets fixed first, explaining why a finding matters to a team that didn't write the code, and keeping status legible to people several layers removed from the pipeline.</p>
+    <p>The same client-facing discipline shows up in how the DevSecOps rollout itself happened. Instrumenting SAST, DAST, SCA, WAF, and secret detection across 6+ CI/CD pipelines is a technical task; getting engineering teams who didn't ask for another security gate to actually adopt it is a change-management one.</p>
+    <p>I built and run IBM's Security Champion programme — 50+ engineers trained — which is internal consulting in miniature: identify who needs to change their behaviour, find the argument that lands for that specific audience, and measure whether it stuck.</p>
+  </section>
 
-<!-- ── PUBLISHER FEED ─────────────────────────────────── -->
-<section id="publisher">
-  <div class="section-label reveal">// 04 — Published Work</div>
-  <h2 class="reveal">Daily<br>Output</h2>
+  <section id="presales" class="wrap">
+    <h2>Presales &amp; Solution Consulting</h2>
+    <p>What the work above translates to when the audience is a customer rather than a colleague:</p>
+    <ul class="check">
+      <li><strong>Technical discovery at scale</strong> — leading 20+ security workstreams for a global manufacturing client requires the same skill a presales engineer uses in a discovery call: figuring out what actually matters in this environment, fast, from people who don't always know how to describe their own problem.</li>
+      <li><strong>Cross-functional translation</strong> — coordinating APAC stakeholders (Philippines, Indonesia) while owning the technical delivery means operating across the same axis presales requires: engineering ↔ security ↔ client stakeholder ↔ leadership.</li>
+      <li><strong>Explaining complex material to a non-expert audience under evaluation</strong> — 12 graduate security labs rated 4.7/5.0 by 140+ students is direct evidence of making adversarial, technical material land with an audience that doesn't share your vocabulary.</li>
+      <li><strong>Building the case for adoption, not just the fix</strong> — the Security Champion programme required making a technical argument that got 50+ engineers to change behaviour without a mandate.</li>
+    </ul>
+  </section>
 
-  <div class="publisher-layout reveal">
-    <!-- Main feed -->
-    <div>
-      <div class="feed-tabs" role="tablist" aria-label="Published work feed">
-        <button class="feed-tab active" data-panel="all" role="tab" id="tab-all" aria-selected="true" aria-controls="panel-all">All</button>
-        <button class="feed-tab" data-panel="github" role="tab" id="tab-github" aria-selected="false" aria-controls="panel-github" tabindex="-1">GitHub</button>
-        <button class="feed-tab" data-panel="articles" role="tab" id="tab-articles" aria-selected="false" aria-controls="panel-articles" tabindex="-1">Articles</button>
-        <button class="feed-tab" data-panel="notes" role="tab" id="tab-notes" aria-selected="false" aria-controls="panel-notes" tabindex="-1">Notes</button>
-      </div>
+  <section id="experience" class="wrap">
+    <h2>Experience</h2>
 
-      <!-- ALL -->
-      <div class="feed-panel active" id="panel-all" role="tabpanel" aria-labelledby="tab-all" tabindex="0">
-        <div class="feed-loading" id="all-loading">
-          <div class="feed-loading-dot"></div>
-          <div class="feed-loading-dot"></div>
-          <div class="feed-loading-dot"></div>
-        </div>
+    <div class="role">
+      <div class="role-head">
+        <h3>IBM India — Security Consultant, Application Security</h3>
+        <span class="role-meta">Bengaluru, India · Dec 2023–Present</span>
       </div>
-
-      <!-- GITHUB -->
-      <div class="feed-panel" id="panel-github" role="tabpanel" aria-labelledby="tab-github" tabindex="0">
-        <div class="feed-loading" id="gh-loading">
-          <div class="feed-loading-dot"></div>
-          <div class="feed-loading-dot"></div>
-          <div class="feed-loading-dot"></div>
-        </div>
-      </div>
-
-      <!-- ARTICLES -->
-      <div class="feed-panel" id="panel-articles" role="tabpanel" aria-labelledby="tab-articles" tabindex="0">
-        <!-- Unpublished drafts — not clickable. Replace with a real <a href> once each piece is live. -->
-        <div class="feed-item feed-item-disabled">
-          <span class="feed-item-type article">Article</span>
-          <div class="feed-item-body">
-            <div class="feed-item-title">Breaking Down CORS Misconfigurations in Modern APIs</div>
-            <div class="feed-item-meta">
-              <span class="feed-item-date">Coming soon</span>
-            </div>
-            <div class="feed-item-desc">A deep-dive into the three CORS anti-patterns that keep returning in enterprise codebases — and how to kill them for good.</div>
-          </div>
-        </div>
-        <div class="feed-item feed-item-disabled">
-          <span class="feed-item-type article">Article</span>
-          <div class="feed-item-body">
-            <div class="feed-item-title">DevSecOps at Scale: Lessons from 8 Production Pipelines</div>
-            <div class="feed-item-meta">
-              <span class="feed-item-date">Coming soon</span>
-            </div>
-            <div class="feed-item-desc">What nobody tells you about rolling out SAST/DAST to teams that don't want it — and the false-positive problem that nearly killed the programme.</div>
-          </div>
-        </div>
-        <div class="feed-item feed-item-disabled">
-          <span class="feed-item-type article">Article</span>
-          <div class="feed-item-body">
-            <div class="feed-item-title">OAuth 2.0 Misuse: The Bugs Hiding in Plain Sight</div>
-            <div class="feed-item-meta">
-              <span class="feed-item-date">Coming soon</span>
-            </div>
-            <div class="feed-item-desc">JWT, SAML, and OAuth flows all share a common failure mode that code reviewers miss. Here's the pattern and how to catch it at design time.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NOTES -->
-      <div class="feed-panel" id="panel-notes" role="tabpanel" aria-labelledby="tab-notes" tabindex="0">
-        <!-- Static notes/LinkedIn posts — update with real links -->
-        <a href="https://www.linkedin.com/in/om-lakshmi-shanthi" target="_blank" rel="noopener noreferrer" class="feed-item">
-          <span class="feed-item-type note">Note</span>
-          <div class="feed-item-body">
-            <div class="feed-item-title">This week in AppSec: what I shipped, what I broke, what I fixed</div>
-            <div class="feed-item-meta">
-              <span class="feed-item-date">LinkedIn · weekly</span>
-            </div>
-          </div>
-          <span class="feed-arrow">→</span>
-        </a>
-        <a href="https://www.linkedin.com/in/om-lakshmi-shanthi" target="_blank" rel="noopener noreferrer" class="feed-item">
-          <span class="feed-item-type note">Note</span>
-          <div class="feed-item-body">
-            <div class="feed-item-title">TIL: WAF bypass via Unicode normalisation — a quick thread</div>
-            <div class="feed-item-meta">
-              <span class="feed-item-date">LinkedIn · ongoing</span>
-            </div>
-          </div>
-          <span class="feed-arrow">→</span>
-        </a>
-        <a href="https://www.linkedin.com/in/om-lakshmi-shanthi" target="_blank" rel="noopener noreferrer" class="feed-view-all">View all notes on LinkedIn</a>
-      </div>
+      <ul>
+        <li>Own the DevSecOps security programme for a global manufacturing client — 8 applications across AWS, Azure, and on-premises infrastructure, secured through SAST, DAST, SCA, WAF, and secret detection deployed across 6+ CI/CD pipelines.</li>
+        <li>Lead delivery across 20+ security workstreams for that engagement, coordinating stakeholders across the Philippines and Indonesia.</li>
+        <li>Eliminated 3 recurring vulnerability classes — CORS misconfiguration, CSP gaps, OAuth/JWT/SAML implementation errors — across 50+ findings, closing root causes rather than individual tickets.</li>
+        <li>Designed and lead a Security Champion programme, training 50+ engineers to catch these issues before they reach a pipeline scan.</li>
+      </ul>
     </div>
 
-    <!-- Sidebar -->
-    <div class="publisher-sidebar">
-      <div class="sidebar-profile">
-        <div class="sidebar-avatar" id="ghAvatar">OV</div>
-        <div class="sidebar-name">Om Venugopal</div>
-        <div class="sidebar-handle">@Om-Vg</div>
-        <div class="sidebar-stats">
-          <div class="sidebar-stat">
-            <span class="sidebar-stat-num" id="ghRepos">—</span>
-            <span class="sidebar-stat-label">Repos</span>
-          </div>
-          <div class="sidebar-stat">
-            <span class="sidebar-stat-num" id="ghFollowers">—</span>
-            <span class="sidebar-stat-label">Followers</span>
-          </div>
-          <div class="sidebar-stat">
-            <span class="sidebar-stat-num" id="ghStars">—</span>
-            <span class="sidebar-stat-label">Stars</span>
-          </div>
-        </div>
+    <div class="role">
+      <div class="role-head">
+        <h3>University of Maryland — Graduate Teaching Assistant, Network Security</h3>
+        <span class="role-meta">College Park, MD · Aug 2022–May 2023</span>
       </div>
-
-      <div class="sidebar-section-label">Find me on</div>
-      <div class="sidebar-links">
-        <a href="https://github.com/Om-Vg" target="_blank" rel="noopener noreferrer" class="sidebar-link">
-          <span class="sidebar-link-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-          </span>
-          github.com/Om-Vg
-        </a>
-        <a href="https://www.linkedin.com/in/om-lakshmi-shanthi" target="_blank" rel="noopener noreferrer" class="sidebar-link">
-          <span class="sidebar-link-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </span>
-          linkedin.com/in/om-lakshmi-shanthi
-        </a>
-      </div>
+      <ul>
+        <li>Designed and delivered 12 security labs — cryptography, web security, OAuth/SAML — for 140+ students; rated 4.7/5.0.</li>
+        <li>Translated graduate-level, adversarial security material into exercises for students without a security background.</li>
+      </ul>
     </div>
-  </div>
-</section>
 
-<!-- Contact -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="contact-text">
-      <div class="section-label reveal">// 05 — Contact</div>
-      <h2 class="reveal">Let's<br>Talk</h2>
-      <p class="reveal">Open to Senior Security Engineer, AppSec, and Product Security roles at top-tier technology, financial services, and cybersecurity firms.</p>
-      <div class="contact-links reveal">
-        <a href="mailto:omlsvenugopal@gmail.com" class="contact-link">
-          <span class="contact-link-label">Email</span>
-          omlsvenugopal@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/om-lakshmi-shanthi" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <span class="contact-link-label">LinkedIn</span>
-          linkedin.com/in/om-lakshmi-shanthi
-        </a>
-        <a href="https://github.com/Om-Vg" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <span class="contact-link-label">GitHub</span>
-          github.com/Om-Vg
-        </a>
+    <div class="role">
+      <div class="role-head">
+        <h3>New York Public Library — Cybersecurity Intern</h3>
+        <span class="role-meta">New York, NY · Jun–Aug 2022</span>
       </div>
+      <ul>
+        <li>Hardened 140+ endpoints via XDR/EDR deployment.</li>
+        <li>Built a security-awareness programme adopted by 300+ staff.</li>
+      </ul>
     </div>
-    <div class="availability reveal">
-      <div class="avail-status"><span class="avail-dot"></span>Available for opportunities</div>
-      <div class="avail-title">Open to<br>Relocate</div>
-      <p class="avail-desc">Actively targeting senior roles in the UAE, Singapore, and globally. Open to full-time positions and select consulting engagements in AppSec and DevSecOps.</p>
-      <div class="avail-locations">
-        <span class="avail-loc">Dubai, UAE</span>
-        <span class="avail-loc">Abu Dhabi</span>
-        <span class="avail-loc">Singapore</span>
-        <span class="avail-loc">London</span>
-        <span class="avail-loc">Remote / Global</span>
-      </div>
+  </section>
+
+  <section id="credentials" class="wrap">
+    <h2>Credentials &amp; Proof</h2>
+    <div class="creds">
+      <div class="cred"><span class="name">Black Hat USA 2023 Student Scholarship</span><span class="sub">Awarded to cybersecurity students globally</span></div>
+      <div class="cred"><span class="name">M.Eng, Cybersecurity</span><span class="sub">University of Maryland, College Park</span></div>
+      <div class="cred"><span class="name">B.Sc, Computer Science</span><span class="sub">PSG College of Arts &amp; Science</span></div>
+      <div class="cred"><span class="name">CompTIA Security+</span><span class="sub">Active</span></div>
+      <div class="cred"><span class="name">ISC2 Certified in Cybersecurity (CC)</span><span class="sub">Active</span></div>
+      <div class="cred"><span class="name">Microsoft Azure Fundamentals (AZ-900)</span><span class="sub">Active</span></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <span>Om Venugopal · Security Engineer · om-vg.github.io</span>
-  <span>Built to be found.</span>
-</footer>
+  <footer id="contact" class="wrap">
+    <h2>Contact</h2>
+    <p>Open to conversations on application security, cloud and DevSecOps programmes, and consulting engagements.</p>
+    <div class="contact-links">
+      <a href="mailto:omlsvenugopal@gmail.com">omlsvenugopal@gmail.com</a>
+      <a href="https://linkedin.com/in/om-lakshmi-shanthi" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Om-Vg" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="fine">© 2026 Om Venugopal</p>
+  </footer>
 
-<script src="js/app.js"></script>
+</main>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHPJ8EMB2C"></script>
 <script>
